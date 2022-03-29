@@ -17,6 +17,10 @@ namespace xadrez_console
 
                 Tela.imprimeTabuleiro(tb);
 
+                PosicaoXadrez posi = new PosicaoXadrez('a', 1);
+                Console.WriteLine(posi.toPosition());
+                Console.WriteLine(posi);
+
             }catch(TabuleiroExecption e)
             {
                 Console.WriteLine(e.Message);
