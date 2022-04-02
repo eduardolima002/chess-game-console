@@ -38,7 +38,7 @@ namespace tabuleiro
         {
             if (existePeca(pos))
             {
-                throw new TabuleiroExecption("Já existe uma peça nessa posição!");
+                throw new TabuleiroException("Já existe uma peça nessa posição!");
             }
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos;
@@ -69,7 +69,7 @@ namespace tabuleiro
         {
             if (!posicaoValida(pos))
             {
-                throw new TabuleiroExecption("Posição inválida!");
+                throw new TabuleiroException("Posição inválida!");
             }
         }
 
