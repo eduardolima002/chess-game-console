@@ -19,6 +19,10 @@ namespace xadrez_console
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.turno);
             Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+            if (partida.xeque)
+            {
+                Console.WriteLine("XEQUE!");
+            }
         }
 
         public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
@@ -53,7 +57,7 @@ namespace xadrez_console
                 Console.Write(8 - i + " ");
                 for (int j = 0; j <tab.colunas; j++)
                 {
-                    imprimePeca(tab.peca(i, j));
+                    imprimirPeca(tab.peca(i, j));
                 }
                 Console.WriteLine();
             }
@@ -79,7 +83,7 @@ namespace xadrez_console
                     {
                         Console.BackgroundColor = fundoOriginal;
                     }
-                    imprimePeca(tab.peca(i, j));
+                    imprimirPeca(tab.peca(i, j));
                     Console.BackgroundColor = fundoOriginal;
                 }
                 Console.WriteLine();
@@ -96,7 +100,7 @@ namespace xadrez_console
             return new PosicaoXadrez(coluna, linha);
         }
 
-        public static void imprimePeca(Peca peca)
+        public static void imprimirPeca(Peca peca)
         {
             if (peca == null)
             {
